@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>حاسبة عمرك يافاشل</title>
+        <style>
+            body {
+                  display: flex;
+                        align-items: center;
+                              justify-content: center;
+                                    height: 100vh;
+                                          margin: 0;
+                                                font-family: 'Arial', sans-serif;
+                                                      background-color: #87CEEB; /* Blue background */
+                                                          }
+
+                                                              #calculator {
+                                                                    text-align: center;
+                                                                          background-color: #ADD8E6; /* Light blue background for calculator */
+                                                                                padding: 20px;
+                                                                                      border-radius: 10px;
+                                                                                          }
+
+                                                                                              input {
+                                                                                                    padding: 10px;
+                                                                                                          margin: 10px;
+                                                                                                                font-size: 1em;
+                                                                                                                    }
+
+                                                                                                                        button {
+                                                                                                                              padding: 10px 20px;
+                                                                                                                                    font-size: 1em;
+                                                                                                                                          background-color: #008000; /* Green color */
+                                                                                                                                                color: #fff; /* White text */
+                                                                                                                                                      border: none;
+                                                                                                                                                            cursor: pointer;
+                                                                                                                                                                  border-radius: 5px;
+                                                                                                                                                                      }
+
+                                                                                                                                                                          button:hover {
+                                                                                                                                                                                background-color: #006400; /* Dark green on hover */
+                                                                                                                                                                                    }
+                                                                                                                                                                                      </style>
+                                                                                                                                                                                      </head>
+                                                                                                                                                                                      <body dir="rtl">
+                                                                                                                                                                                        <div id="calculator">
+                                                                                                                                                                                            <h2>حاسبة عمرك يافاشل</h2>
+                                                                                                                                                                                                <label for="birthDate">ادخل تاريخ ميلادك ياقرد</label>
+                                                                                                                                                                                                    <input type="date" id="birthDate">
+                                                                                                                                                                                                        <br>
+                                                                                                                                                                                                            <button onclick="calculateAge()">التالي</button>
+                                                                                                                                                                                                                <p id="result"></p>
+                                                                                                                                                                                                                <h5>--------------------------------------------------------------------</h5>
+                                                                                                                                                                                                                <h4>فضولي</h5>
+                                                                                                                                                                                                                <button onclick="document.location= 'https://www.youtube.com/@futholi'">يوتيوب</button>
+                                                                                                                                                                                                                <button onclick="document.location= 'https://discord.com/invite/PmdmxVJBjn'">ديسكورد</button>
+                                                                                                                                                                                                                <button onclick="document.location= 'https://www.twitch.tv/futholi'">تويتش</button>
+                                                                                                                                                                                                                <button onclick="document.location= 'http://futholi.eb2a.com'">ويب</button>
+                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                       <br>
+                                                                                                                                                                                                                         <script>
+                                                                                                                                                                                                                             function calculateAge() {
+                                                                                                                                                                                                                                   const birthDate = new Date(document.getElementById('birthDate').value);
+                                                                                                                                                                                                                                         const currentDate = new Date();
+
+                                                                                                                                                                                                                                               if (!isNaN(birthDate.getTime())) {
+                                                                                                                                                                                                                                                       const ageInMilliseconds = currentDate - birthDate;
+                                                                                                                                                                                                                                                               const ageInDays = Math.floor(ageInMilliseconds / (24 * 60 * 60 * 1000));
+                                                                                                                                                                                                                                                                       const ageInMonths = Math.floor(ageInDays / 30);
+                                                                                                                                                                                                                                                                               const ageInYears = Math.floor(ageInDays / 365);
+
+                                                                                                                                                                                                                                                                                       document.getElementById('result').textContent = `عمرك الزفت هو ${ageInYears} سنة و${ageInMonths % 12} شهر و${ageInDays % 30} يوم... اصلا من ولادتك مامنك فايده`;
+                                                                                                                                                                                                                                                                                             } else {
+                                                                                                                                                                                                                                                                                                     document.getElementById('result').textContent = 'يازفت حط تاريخ ميلاد لاتسويه فاضي يافاضي';
+                                                                                                                                                                                                                                                                                                           }
+                                                                                                                                                                                                                                                                                                               }
+                                                                                                                                                                                                                                                                                                                 </script>
+                                                                                                                                                                                                                                                                                                                 </body>
+                                                                                                                                                                                                                                                                                                                 </html>
